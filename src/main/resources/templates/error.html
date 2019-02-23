@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head data-th-fragment="headFragment(Error)">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-th-text="${title}"></title>
+
+    <link data-th-href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet">
+    <link rel="stylesheet"
+          data-th-href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css}">
+    <style>
+        .fig {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/menu" class="waves-effect waves-light btn">На главную</a>
+    <div class="row">
+        <div align="center" class="col s12">
+            <p class="fig"><img src="http://www.positive-spirit.ru/files/images/bug.gif" width="400" height="400" alt="..."></p>
+            <h1>Ошибка! Вернитесь на главную страницу! </h1>
+        </div>
+    </div>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</div>
+</body>
+</html>

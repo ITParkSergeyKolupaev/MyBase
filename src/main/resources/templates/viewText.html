@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head data-th-fragment="headFragment(ViewText)">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-th-text="${title}"></title>
+
+    <link data-th-href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet">
+    <link rel="stylesheet"
+          data-th-href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css}">
+    <style type="text/css">
+        TABLE {
+            width: 800px;
+        }
+        TD, TH {
+            padding: 3px;
+        }
+        TH {
+            text-align: left;
+            border-bottom: 1px solid #000;
+        }
+        .vl {
+            border-right: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <a href="/menu" class="waves-effect waves-light btn">На главную</a>
+    <a data-th-href="@{/{id}/editText(id=${itemText.id})}" class="waves-effect waves-light btn">Редактировать</a>
+    <a data-th-href="@{/{id}/removeText(id=${itemText.id})}" class="waves-effect waves-light btn">Удалить</a>
+    <table width="100%" cellspacing="0" cellpadding="5">
+        <tr>
+            <th class="vl">[[${itemText.name}]]</th><th></th>
+            <tr>
+                <td class="vl"></td><td>[[${itemText.text}]]</td>
+            </tr>
+        </tr>
+    </table>
+
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>

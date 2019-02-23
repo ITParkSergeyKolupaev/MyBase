@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+        <head data-th-fragment="headFragment(index)">
+            <meta charset="UTF-8">
+            <meta name="viewport"
+                  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title data-th-text="${title}"></title>
+
+            <link data-th-href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet">
+            <link rel="stylesheet"
+                  data-th-href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css}">
+            <style>
+                .fig {
+                    text-align: center;
+                }
+            </style>
+        </head>
+<body>
+    <div >
+        <h1 align="center">Моя база знаний</h1>
+        <p class="fig"><img src="https://a.d-cd.net/bad09des-960.jpg" width="700" height="431" alt="..."></p>
+        <div align="center">
+            <a data-th-href="@{/menu}" class="btn btn-floating btn-large pulse"><i class="material-icons">Войти</i></a>
+        </div>
+    </div>
+
+    <div data-th-fragment="scriptsFragment">
+        <script type="text/javascript" data-th-src="@{https://code.jquery.com/jquery-3.2.1.min.js}"></script>
+        <script data-th-src="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js}"></script>
+    </div>
+</body>
+</html>

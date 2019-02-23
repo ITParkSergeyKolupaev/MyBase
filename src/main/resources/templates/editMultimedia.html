@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+    <head data-th-fragment="headFragment(EditMultimedia)">
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title data-th-text="${title}"></title>
+
+        <link data-th-href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet">
+        <link rel="stylesheet"
+              data-th-href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css}">
+        <style>
+            .fig {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+<body bgcolor="#c0c0c0">
+<form enctype="multipart/form-data" method="post">
+    <div>
+        <a href="/menu" class="waves-effect waves-light btn">На главную</a>
+        <h1 align="center">Введите имя:</h1>
+        <p class="fig"><input name="name" data-th-value="${itemMultimedia.name}"></p>
+        <p></p>
+        <h3 align="center">добавьте файл:</h3>
+        <input class="fig" name="file" type="file">
+        <div align="center">
+            <button class="waves-effect waves-light btn">Сохранить</button>
+        </div>
+    </div>
+    <p data-th-if="${itemMultimedia.id != 0}">
+        <img data-th-src="@{/media/{path}(path=${itemMultimedia.path})}" width="50%">
+    </p>
+</form>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>

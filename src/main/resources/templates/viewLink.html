@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head data-th-fragment="headFragment(ViewLink)">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-th-text="${title}"></title>
+
+    <link data-th-href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet">
+    <link rel="stylesheet"
+          data-th-href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css}">
+
+</head>
+<body>
+    <a href="/menu" class="waves-effect waves-light btn">На главную</a>
+    <h1>[[${itemLink.name}]]</h1>
+    <p>[[${itemLink.link}]]</p>
+    <a data-th-href="@{/{id}/editLink(id=${itemLink.id})}" class="waves-effect waves-light btn">Редактировать</a>
+    <a data-th-href="@{/{id}/removeLink(id=${itemLink.id})}" class="waves-effect waves-light btn">Удалить</a>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+</html>

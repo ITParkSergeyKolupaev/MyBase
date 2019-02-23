@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-th-text="${title}"></title>
+
+    <link data-th-href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet">
+    <link rel="stylesheet"
+          data-th-href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css}">
+    <style>
+        table {
+            width: 100%;
+            border: 4px double black;
+            border-collapse: collapse;
+        }
+        th {
+            text-align: left;
+            background: #ccc;
+            padding: 5px;
+            border: 1px solid black;
+        }
+        td {
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+        <h2 >
+        <div align="center">Добавь новую тему</div>
+        </h2>
+
+        <table width="100%" cellspacing="0" cellpadding="5">
+            <tr>
+                <td width="200" valign="left" >
+                    <p></p>
+                    <div align="center">
+                        <h5>Список ссылок</h5>
+                        <a data-th-href="@{/0/editLink}" class="waves-effect waves-light btn">
+                            <i class="material-icons">Добавить</i></a>
+                    </div>
+                    <p>
+                    <ul>
+                        <li data-th-each="itemLink : ${itemsLink}" class="itemLink">
+                            <a data-th-href="@{/{id}(id=${itemLink.id})}">
+                                [[${itemLink.name}]]
+                            </a>
+                            <a href="/linkTo">Перейти</a>
+                        </li>
+                    </ul>
+                    </p>
+                </td>
+
+                <td width="200" valign="center">
+                    <div align="center">
+                        <h5>Список статей</h5>
+                        <a data-th-href="@{/0/editText}" class="waves-effect waves-light btn"><i class="material-icons">Добавить</i></a>
+                    </div>
+                    <p>
+                    <div align="center">
+                        <ul>
+                            <li data-th-each="itemText : ${itemsText}" class="itemText">
+                                <a data-th-href="@{/{id}/text(id=${itemText.id})}">
+                                    [[${itemText.name}]]
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    </p>
+                </td>
+
+                <td width="200" valign="right">
+                    <div align="center">
+                        <h5>Список медиа</h5>
+                        <a data-th-href="@{/0/editMultimedia}" class="waves-effect waves-light btn">
+                            <i class="material-icons">Добавить</i></a>
+                    </div>
+                    <p>
+                    <div align="center">
+                        <ul>
+                            <li data-th-each="itemMultimedia : ${itemsMultimedia}" class="itemMultimedia">
+                                <a data-th-href="@{/{id}/Multimedia(id=${itemMultimedia.id})}">
+                                    [[${itemMultimedia.name}]]
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>

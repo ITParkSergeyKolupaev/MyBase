@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head data-th-fragment="headFragment(EditText)">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-th-text="${title}"></title>
+
+    <link data-th-href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet">
+    <link rel="stylesheet"
+          data-th-href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css}">
+    <style type="text/css">
+        TABLE {
+            width: 800px; /* Ширина таблицы */
+
+        }
+        TD, TH {
+            padding: 3px; /* Поля вокруг содержимого ячеек */
+        }
+        TH {
+            text-align: left; /* Выравнивание по левому краю */
+            border-bottom: 1px solid #000; /* Линия снизу */
+        }
+        .vl {
+            border-right: 1px solid #000; /* Линия справа */
+        }
+
+    </style>
+</head>
+<body bgcolor="#c0c0c0">
+<form method="post">
+    <a href="/menu" class="waves-effect waves-light btn">На главную</a>
+    <button class="waves-effect waves-light btn">Сохранить</button>
+
+    <table width="100%" cellspacing="0" cellpadding="5">
+        <tr>
+            <h3>Введите имя темы:</h3>
+            <th class="vl"><input name="name" size="50" data-th-value="${itemText.name}"></th><th>Укажите текст:</th>
+            <!--<td width="200" valign="top"></td>-->
+        <tr>
+            <td class="vl"></td><td><input name="text" size="100" data-th-value="${itemText.text}"></td>
+        </tr>
+
+        </tr>
+    </table>
+</form>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
