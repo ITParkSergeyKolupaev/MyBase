@@ -23,7 +23,7 @@
     <div>
         <a href="/menu" class="waves-effect waves-light btn">На главную</a>
         <h1 align="center">Введите имя:</h1>
-        <p class="fig"><input name="name" data-th-value="${itemMultimedia.name}"></p>
+        <p class="fig"><input name="name" data-th-value="${itemMultimedia.name}" ></p>
         <p></p>
         <h3 align="center">добавьте файл:</h3>
         <input class="fig" name="file" type="file">
@@ -32,7 +32,7 @@
         </div>
     </div>
     <p data-th-if="${itemMultimedia.id != 0}">
-        <img data-th-src="@{/media/{path}(path=${itemMultimedia.path})}" width="50%">
+        <img data-th-src="@{/media/{path}(path=${itemMultimedia.path})}" width="30%">
     </p>
 </form>
 

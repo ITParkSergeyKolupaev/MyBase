@@ -63,7 +63,11 @@ public class MyBaseService {
 
         entityText.setId(itemText.getId());
         entityText.setName(itemText.getName());
+        if (itemText.getName().length() == 0) {
+            throw new NameIsNullException();
+        }
         entityText.setText(itemText.getText());
+
         repositoryMyText.save(entityText);
     }
     public void removeByIdText(int id) {
@@ -88,6 +92,9 @@ public class MyBaseService {
 
         entityMultimedia.setId(item.getId());
         entityMultimedia.setName(item.getName());
+        if (item.getName().length() == 0) {
+            throw new NameIsNullException();
+        }
         MultipartFile file = item.getFile();   /////проверить
         if (!file.isEmpty() && file.getContentType() != null) {
             String ext;
@@ -136,7 +143,13 @@ public class MyBaseService {
 
         entityLink.setId(itemLink.getId());
         entityLink.setName(itemLink.getName());
+        if (itemLink.getName().length() == 0) {
+            throw new NameIsNullException();
+        }
         entityLink.setLink(itemLink.getLink());
+        if (itemLink.getLink().length() == 0) {
+            throw new NameIsNullException();
+        }
         repositoryLink.save(entityLink);
     }
     public void removeByIdLink(int id) {

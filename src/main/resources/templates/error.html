@@ -22,7 +22,8 @@
     <div class="row">
         <div align="center" class="col s12">
             <p class="fig"><img src="http://www.positive-spirit.ru/files/images/bug.gif" width="400" height="400" alt="..."></p>
-            <h1>Ошибка! Вернитесь на главную страницу! </h1>
+            <h4 data-th-if="${message}">[[${message}]]</h4>
+            <h3>Вернитесь на главную страницу! </h3>
         </div>
     </div>
     <!--Import jQuery before materialize.js-->
