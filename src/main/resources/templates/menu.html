@@ -48,7 +48,8 @@
                             <a data-th-href="@{/{id}(id=${itemLink.id})}">
                                 [[${itemLink.name}]]
                             </a>
-                            <a href="/linkTo">Перейти</a>
+
+                            <a data-th-href="@{/{id}/redirectLink(id=${itemLink.id})}">перейти</a>
                         </li>
                     </ul>
                     </p>

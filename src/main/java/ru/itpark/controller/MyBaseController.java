@@ -10,6 +10,8 @@ import ru.itpark.dto.MyMultimediaEntityDto;
 import ru.itpark.dto.MyTextEntityDto;
 import ru.itpark.service.MyBaseService;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping
 public class MyBaseController {
@@ -28,13 +30,14 @@ public class MyBaseController {
         return "menu";
     }
 
-    //-----for Link
-    @GetMapping("/linkTo")
-    public String linkTo(@PathVariable int id, Model model){
-        String nameLink = service.getByIdLink(id).getLink();
-        return nameLink;
+
+    @GetMapping("{id}/redirectLink")
+    public String redirectExample(@PathVariable int id, HttpServletRequest request) {
+        String link = service.getByIdLink(id).getLink();
+        return "redirect:" + request.getScheme() +"://" +link;
     }
 
+    //-----for Link
     @GetMapping("/{id}")
     public String getByIdLink(@PathVariable int id, Model model) {
         model.addAttribute("itemLink", service.getByIdLink(id));

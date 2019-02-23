@@ -24,7 +24,7 @@ public class MyBaseApplication {
 
         repositoryText.saveAll(List.of(new MyTextEntity(1,
                 "Mockito","Mocking framework for unit tests")));
-        repositoryLink.saveAll(List.of(new MyLinkEntity( 1, "google", "www.google.ru")));
+        repositoryLink.saveAll(List.of(new MyLinkEntity( 1, "google", "www.google.com")));
         repositoryMulti.saveAll(List.of(new MyMultimediaEntity( 1, "Картинка - Привет","hi")));
     }
 }
